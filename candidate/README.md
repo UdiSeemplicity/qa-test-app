@@ -133,7 +133,7 @@ scans:            id, asset_id, scanner_name, status, started_at, completed_at, 
 
 ## Your Tasks
 
-### Part 1 — API Testing (45 min)
+### Part 1 — API Testing
 Write pytest-based tests for the **Dashboard API**:
 - Findings CRUD operations (create, read, update status, dismiss)
 - Error handling (invalid inputs, non-existent resources)
@@ -141,19 +141,19 @@ Write pytest-based tests for the **Dashboard API**:
 - Validate response status codes, response structure, and data correctness
 - Test the search endpoint
 
-### Part 2 — Database Validation (30 min)
+### Part 2 — Database Validation
 Connect directly to PostgreSQL and write tests that:
 - Verify data integrity after API operations (e.g., dismiss a finding via API → query DB → verify `is_dismissed` is TRUE)
 - Check that database constraints enforce data quality (e.g., CVSS score ranges, required fields)
 - Validate consistency between findings, vulnerabilities, and assets tables
 
-### Part 3 — Integration Testing (25 min)
+### Part 3 — Integration Testing
 Test cross-service flows:
 - Run a scan via Scanner Service → verify findings created in Dashboard API
 - Update finding status → verify DB state matches
 - Test what happens with concurrent scan imports (optional but valuable)
 
-### Part 4 — UI Smoke Test with Playwright (10 min)
+### Part 4 — UI Smoke Test with Playwright
 Write 1-2 Playwright tests:
 - Navigate to `http://localhost:8000/`, verify the dashboard loads with findings
 - Change a finding's status through the UI dropdown and verify the change is reflected
